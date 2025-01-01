@@ -10,7 +10,7 @@ type GoogleAuthRequestBody = {
   idToken: string;
 };
 
-export async function authenticateUser(req: NextRequest) {
+export async function POST(req: NextRequest) {
   const { email, name } = await req.json();
 
   try {
@@ -59,7 +59,7 @@ export async function authenticateUser(req: NextRequest) {
   }
 }
 
-export async function googleAuth(request: NextRequest) {
+export async function PUT(request: NextRequest) {
   try {
     const body: GoogleAuthRequestBody = await request.json();
     const { idToken } = body;
