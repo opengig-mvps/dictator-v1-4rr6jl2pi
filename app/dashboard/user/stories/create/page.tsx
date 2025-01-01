@@ -12,18 +12,18 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/componen/ui/card";
-import { Label } from "@/componen/ui/label";
-import { Input } from "@/componen/ui/input";
-import { Button } from "@/componen/ui/button";
-import { Textarea } from "@/componen/ui/textarea";
+} from "@/components/ui/card";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/componen/ui/select";
+} from "@/components/ui/select";
 import api from "@/lib/api";
 
 const storySchema = z.object({
@@ -120,7 +120,7 @@ const CreateStoryPage = () => {
             <div className="space-y-2">
               <Label htmlFor="category">Category</Label>
               <Select
-                onValueChange={(value) => setValue("category", value)}
+                onValueChange={(value: any) => setValue("category", value)}
               >
                 <SelectTrigger>
                   <SelectValue placeholder="Select a category" />
@@ -141,10 +141,10 @@ const CreateStoryPage = () => {
               <Label htmlFor="tags">Tags</Label>
               <Input
                 placeholder="Enter tags (comma separated)"
-                onChange={(e) =>
+                onChange={(e: any) =>
                   setValue(
                     "tags",
-                    e.target.value.split(",").map((tag) => tag.trim())
+                    e.target.value.split(",").map((tag: any) => tag.trim())
                   )
                 }
               />

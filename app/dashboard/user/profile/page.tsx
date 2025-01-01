@@ -13,11 +13,11 @@ import {
   CardContent,
   CardHeader,
   CardTitle,
-} from "@/componen/ui/card";
-import { Label } from "@/componen/ui/label";
-import { Input } from "@/componen/ui/input";
-import { Button } from "@/componen/ui/button";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/componen/ui/tabs";
+} from "@/components/ui/card";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import api from "@/lib/api";
 
 const emailSchema = z.object({

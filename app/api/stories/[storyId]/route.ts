@@ -6,8 +6,8 @@ export async function GET(
   { params }: { params: { storyId: string } },
 ): Promise<NextResponse> {
   try {
-    const story = await prisma.story.findUnique({
-      where: { id: params.storyId },
+    const story = await prisma?.story?.findUnique({
+      where: { id: params?.storyId },
       select: {
         id: true,
         title: true,
@@ -30,12 +30,12 @@ export async function GET(
         success: true,
         message: 'Story fetched successfully',
         data: {
-          id: story.id,
-          title: story.title,
-          content: story.content,
-          imageUrl: story.imageUrl,
-          createdAt: story.createdAt.toISOString(),
-          updatedAt: story.updatedAt.toISOString(),
+          id: story?.id,
+          title: story?.title,
+          content: story?.content,
+          imageUrl: story?.imageUrl,
+          createdAt: story?.createdAt?.toISOString(),
+          updatedAt: story?.updatedAt?.toISOString(),
         },
       },
       { status: 200 },
@@ -53,7 +53,7 @@ export async function PUT(
   { params }: { params: { storyId: string } },
 ): Promise<NextResponse> {
   try {
-    const storyId = params.storyId;
+    const storyId = params?.storyId;
     const body: any = await request.json();
     const { title, content, imageUrl } = body;
 
@@ -64,7 +64,7 @@ export async function PUT(
       );
     }
 
-    const updatedStory = await prisma.story.update({
+    const updatedStory = await prisma?.story?.update({
       where: { id: storyId },
       data: {
         title: String(title),
@@ -85,17 +85,17 @@ export async function PUT(
         success: true,
         message: 'Story updated successfully',
         data: {
-          id: updatedStory.id,
-          title: updatedStory.title,
-          content: updatedStory.content,
-          imageUrl: updatedStory.imageUrl,
-          updatedAt: updatedStory.updatedAt.toISOString(),
+          id: updatedStory?.id,
+          title: updatedStory?.title,
+          content: updatedStory?.content,
+          imageUrl: updatedStory?.imageUrl,
+          updatedAt: updatedStory?.updatedAt?.toISOString(),
         },
       },
       { status: 200 },
     );
   } catch (error: any) {
-    if (error.code === 'P2025') {
+    if (error?.code === 'P2025') {
       return NextResponse.json(
         { success: false, message: 'Story not found' },
         { status: 404 },

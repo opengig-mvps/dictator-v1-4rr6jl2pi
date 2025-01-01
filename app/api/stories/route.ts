@@ -28,12 +28,13 @@ export async function POST(request: Request) {
       );
     }
 
+    // Assuming the correct model name is Story in your Prisma schema
     const story = await prisma.story.create({
       data: {
         title: String(title),
         content: String(content),
         imageUrl: imageUrl ? String(imageUrl) : null,
-        userId: session.user.id,
+        userId: session?.user?.id,
       },
     });
 
@@ -42,11 +43,11 @@ export async function POST(request: Request) {
         success: true,
         message: 'Story created successfully',
         data: {
-          id: story.id,
-          title: story.title,
-          content: story.content,
-          imageUrl: story.imageUrl,
-          createdAt: story.createdAt.toISOString(),
+          id: story?.id,
+          title: story?.title,
+          content: story?.content,
+          imageUrl: story?.imageUrl,
+          createdAt: story?.createdAt?.toISOString(),
         },
       },
       { status: 201 }
@@ -66,6 +67,7 @@ export async function GET(request: Request) {
     const limit: number = parseInt(searchParams.get('limit') || '10', 10);
     const skip: number = (page - 1) * limit;
 
+    // Assuming the correct model name is Story in your Prisma schema
     const stories: any = await prisma.story.findMany({
       skip,
       take: limit,
@@ -79,13 +81,13 @@ export async function GET(request: Request) {
       },
     });
 
-    const formattedStories = stories.map((story: any) => ({
-      id: story.id,
-      title: story.title,
-      content: story.content,
-      imageUrl: story.imageUrl,
-      createdAt: story.createdAt.toISOString(),
-      updatedAt: story.updatedAt.toISOString(),
+    const formattedStories = stories?.map((story: any) => ({
+      id: story?.id,
+      title: story?.title,
+      content: story?.content,
+      imageUrl: story?.imageUrl,
+      createdAt: story?.createdAt?.toISOString(),
+      updatedAt: story?.updatedAt?.toISOString(),
     }));
 
     return NextResponse.json({

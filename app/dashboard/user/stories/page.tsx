@@ -12,9 +12,9 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/componen/ui/card";
-import { Input } from "@/componen/ui/input";
-import { Button } from "@/componen/ui/button";
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 import {
   Pagination,
   PaginationContent,
@@ -23,7 +23,7 @@ import {
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
-} from "@/componen/ui/pagination";
+} from "@/components/ui/pagination";
 import api from "@/lib/api";
 
 interface Story {

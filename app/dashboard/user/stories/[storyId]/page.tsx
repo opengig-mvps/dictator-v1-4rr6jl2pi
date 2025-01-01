@@ -11,15 +11,15 @@ import {
   CardContent,
   CardHeader,
   CardTitle,
-} from "@/componen/ui/card";
-import { Button } from "@/componen/ui/button";
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/componen/ui/dialog";
+} from "@/components/ui/dialog";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -30,9 +30,10 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "@/componen/ui/alert-dialog";
-import { Input } from "@/componen/ui/input";
-import { Textarea } from "@/componen/ui/textarea";
+} from "@/components/ui/alert-dialog";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
 import api from "@/lib/api";
 
 const StoryDetailPage = () => {

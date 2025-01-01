@@ -19,8 +19,7 @@ export async function GET(request: Request, { params }: Params) {
     }
 
     const user = await prisma.user.findUnique({
-      where: { id: params.userId },
-      include: { profile: true },
+      where: { id: params?.userId },
     });
 
     if (!user) {
@@ -31,10 +30,10 @@ export async function GET(request: Request, { params }: Params) {
     }
 
     const profileData: any = {
-      email: user.email,
-      username: user.username,
-      name: user.name || '',
-      bio: user.profile?.bio || '',
+      email: user?.email,
+      username: user?.username,
+      name: user?.name || '',
+      bio: '', // As there is no profile model, set bio as empty string
     };
 
     return NextResponse.json(
