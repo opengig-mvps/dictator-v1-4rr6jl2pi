@@ -1,0 +1,88 @@
+{
+  "items": [
+    {
+      "url": "/api/stories",
+      "type": "api",
+      "status": "success",
+      "method": "POST",
+      "error": "Cannot read properties of undefined (reading 'replace')"
+    },
+    {
+      "url": "/api/stories/{storyId}",
+      "type": "api",
+      "status": "success",
+      "method": "PATCH",
+      "error": "Cannot read properties of undefined (reading 'replace')"
+    },
+    {
+      "url": "/api/stories/search",
+      "type": "api",
+      "status": "success",
+      "method": "GET",
+      "error": "Cannot read properties of undefined (reading 'replace')"
+    },
+    {
+      "url": "/api/users/{userId}/profile",
+      "type": "api",
+      "status": "success",
+      "method": "GET",
+      "error": "Cannot read properties of undefined (reading 'replace')"
+    },
+    {
+      "url": "/api/users/{userId}/profile/email",
+      "type": "api",
+      "status": "success",
+      "method": "PATCH",
+      "error": "Cannot read properties of undefined (reading 'replace')"
+    },
+    {
+      "url": "/api/users/{userId}/profile/password",
+      "type": "api",
+      "status": "success",
+      "method": "PATCH",
+      "error": "Cannot read properties of undefined (reading 'replace')"
+    },
+    {
+      "url": "dashboard/user/stories/page.tsx",
+      "type": "page",
+      "status": "success",
+      "userType": "user",
+      "access": "private"
+    },
+    {
+      "url": "dashboard/user/stories/create/page.tsx",
+      "type": "page",
+      "status": "success",
+      "userType": "user",
+      "access": "private"
+    },
+    {
+      "url": "dashboard/user/stories/[storyId]/page.tsx",
+      "type": "page",
+      "status": "success",
+      "userType": "user",
+      "access": "private"
+    },
+    {
+      "url": "dashboard/user/profile/page.tsx",
+      "type": "page",
+      "status": "success",
+      "userType": "user",
+      "access": "private"
+    },
+    {
+      "url": "/(auth)/register/page.tsx",
+      "type": "page",
+      "status": "success",
+      "access": "public",
+      "userType": "all"
+    },
+    {
+      "url": "/(auth)/login/page.tsx",
+      "type": "page",
+      "status": "success",
+      "access": "public",
+      "userType": "all"
+    }
+  ]
+}
